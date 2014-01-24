@@ -33,10 +33,10 @@ Paintball:
         options: [teleportIn, pvpOn]
     onSpawn: ## what happens when a player spawns
         options: [giveItems, hunger=20, health=20]
-        items: 
+        items:
             - snow_ball: 128
     onDeath: ## what happens when a player dies
-        options: []
+        options: [clearInventory]
     onComplete: ## what happens when things end
         options: [teleportOut, clearInventory]
     winner: ## what to give the winner
