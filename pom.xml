@@ -4,7 +4,7 @@
     <groupId>mc.alk</groupId>
     <artifactId>ArenaPaintball</artifactId>
     <packaging>jar</packaging>
-    <version>1.2.0</version>
+    <version>1.2.1</version>
     <name>ArenaPaintball</name>
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -27,13 +27,13 @@
         <dependency>
             <groupId>org.bukkit</groupId>
             <artifactId>bukkit</artifactId>
-            <version>1.6.4-R0.1-SNAPSHOT</version>
+            <version>1.7.2-R0.1-SNAPSHOT</version>
             <scope>provided</scope>
         </dependency>
         <dependency>
             <groupId>mc.alk</groupId>
             <artifactId>BattleArena</artifactId>
-            <version>[3.9.4.8,)</version>
+            <version>3.9.6.7</version>
             <scope>provided</scope>
         </dependency>
         <!-- unknown plugins that I had to add to the repo -->

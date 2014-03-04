@@ -1,45 +1,46 @@
-configVersion: 2.0
-## This should be places in the plugin directory
-## for more help configuring see the wiki
-## https://github.com/alkarinv/BattleArena/wiki
-## Change this file to customize your event
-
 Paintball:
-    enabled: true
-    database: Paintball # or delete if you dont want wins/losses/top, needs BattleTracker
-    rated: true # if database is enabled
-    prefix: "&f[Paintball]&e"
-    cmd: pb
-    joinType: Queue
-    victoryCondition: HighestKills
-    nLives: 1
-    nTeams: 2
-    teamSize: 1
-    ### You can delete any stages/transitions that have no options
-    ### for a list of options see wiki
-    defaults: ## options for entire game
-        options: [woolTeams]
-    preReqs: ## Prerequisites for joining
-        options: []
-    onEnter:
-        options: [storeAll]
-    onLeave:
-        options: [restoreAll]
-    onJoin:  ## when they join the match
-        options: []
-    onPrestart: ## x seconds before onStart
-        options: []
-    onStart: ## Starting
-        options: [teleportIn, pvpOn]
-    onSpawn: ## what happens when a player spawns
-        options: [giveItems, hunger=20, health=20]
-        items:
-            - snow_ball: 128
-    onDeath: ## what happens when a player dies
-        options: [clearInventory]
-    onComplete: ## what happens when things end
-        options: [teleportOut, clearInventory]
-    winner: ## what to give the winner
-        options: [health=20, hunger=20]
-    losers: ## what to give the losers
-        options: []
+  name: Paintball
+  command: pb
+  prefix: '&f[Paintball]&e'
+  signDisplayName: '&f[Paintball]&e'
+  gameSize:
+    nTeams: 2-14
+    teamSize: '1'
+  nLives: '1'
+  victoryCondition: HIGHESTKILLS
+  tracking:
+    database: Paintball
+    rated: true
+    useTrackerMessages: false
+  arenaType: Paintball
+  arenaClass: PaintballArena
+  defaults:
+    options:
+    - woolTeams
+  onEnter:
+    options:
+    - STOREALL
+  onLeave:
+    options:
+    - RESTOREALL
+  onStart:
+    options:
+    - teleportIn
+    - pvpOn
+  onComplete:
+    options:
+    - teleportOut
+    - clearInventory
+  onSpawn:
+    giveItems:
+    - SNOW_BALL 128
+    options:
+    - health=20.0
+    - hunger=20
+  onDeath:
+    options:
+    - clearInventory
+  winners:
+    options:
+    - health=20.0
+    - hunger=20

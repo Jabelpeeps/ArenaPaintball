@@ -12,7 +12,7 @@ public class PaintballArena extends Arena{
 
 	/**
 	 * This is how you create customized events.  You specify a method as a @MatchEventHandler
-	 * and give it at least one bukkit event as the first argument.  In this case its EntityDamageByEntityEvent
+	 * and give it at least one bukkit event as the first argument.  In this case its EntityDamageEvent
 	 * These events will ONLY be called when a match is ongoing
 	 * If the event returns a player (in this case it does) then the event only gets called when
 	 * 1) match is ongoing
