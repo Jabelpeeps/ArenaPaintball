@@ -1,10 +1,11 @@
 package mc.alk.paintball;
 
-import mc.alk.arena.BattleArena;
-import mc.alk.arena.util.Log;
-
 import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.plugin.java.JavaPlugin;
+
+import mc.alk.arena.BattleArena;
+import mc.alk.arena.controllers.APIRegistrationController;
+import mc.alk.arena.util.Log;
 public class Paintball extends JavaPlugin{
 
 	@Override
@@ -15,7 +16,7 @@ public class Paintball extends JavaPlugin{
 		/// "pb": the name of our command alias ( who really wants to type in the entire word paintball?)
 		/// PaintballArena.class: which arena should this competition use
 		/// Register a Paintball
-		BattleArena.registerCompetition(this, "Paintball", "pb", PaintballArena.class);
+		APIRegistrationController.registerCompetition(this, "Paintball", "pb", BattleArena.createArenaFactory( PaintballArena.class) );
 
 		/// create our default config if it doesn't exist
 		saveDefaultConfig();
